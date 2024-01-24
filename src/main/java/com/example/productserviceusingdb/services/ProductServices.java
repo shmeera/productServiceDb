@@ -22,9 +22,10 @@ public class ProductServices implements IProduct {
     public Product GetProductById(Long id) throws NotFoundException {
         Product product = productRepository.findById(id).orElse(null);
         if(product==null)
-            throw new NotFoundException(" Product with id: " + id + " not found enter correct id");
+            throw new NotFoundException(" Testing Product with id: " + id + " not found enter correct id");
         else
              return product;
+
     }
 
     @Override
