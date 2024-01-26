@@ -2,6 +2,7 @@ package com.example.productserviceusingdb.services;
 
 import com.example.productserviceusingdb.dtos.GenericProductDto;
 import com.example.productserviceusingdb.exceptions.NotFoundException;
+import com.example.productserviceusingdb.exceptions.ResourceNotFoundException;
 import com.example.productserviceusingdb.interfaces.IProduct;
 import com.example.productserviceusingdb.models.Product;
 import com.example.productserviceusingdb.repositories.ProductRepository;
@@ -21,9 +22,9 @@ public class ProductServices implements IProduct {
     @Override
     public Product GetProductById(Long id) throws NotFoundException {
         Product product = productRepository.findById(id).orElse(null);
-        if(product==null)
-            throw new NotFoundException(" Testing Product with id: " + id + " not found enter correct id");
-        else
+//        if(product==null)
+//            throw new NotFoundException(" Testing Product with id: " + id + " not found enter correct id");
+//        else
              return product;
 
     }
@@ -73,4 +74,9 @@ public class ProductServices implements IProduct {
 //
 //        return genericProductDto;
 //    }
+
+    public Product getProduct(Long id) {
+        return productRepository.findById(id)
+                .orElseThrow(()-> new ResourceNotFoundException("Product not found with Id"+id.toString()));
+    }
 }

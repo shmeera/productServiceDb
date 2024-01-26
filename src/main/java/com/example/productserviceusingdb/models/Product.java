@@ -26,7 +26,7 @@ public class Product extends BaseModel{
     private Price price;
 
     @ManyToMany(mappedBy = "products", fetch =FetchType.EAGER)
-    @JsonBackReference
+//    @JsonBackReference
     private List<Orders> orders;
 
 

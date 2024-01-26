@@ -31,33 +31,33 @@ public class ProductserviceUsingDbApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-       // productRepository.deleteById(3L);
-        Category category = new Category();
-        category.setName("electronics");
-
-        Category savedCategory = categoryRepository.save(category);
-
-        Price price = new Price();
-        price.setPrice(100L);
-        price.setCurrency("INR");
-
-        List<Product> productList = new ArrayList<>();
-
-        Product product = new Product();
-        product.setTitle("Samsung");
-        product.setDescription("best phone");
-        product.setPrice(price);
-        product.setImage("image url");
-        product.setCategory(savedCategory);
-        productRepository.save(product);
-
-        productList.add(product);
-
-        Orders order  = new Orders();
-
-        order.setProducts(productList);
-        orderRepository.save(order);
-        //order.setId(1L);
+//        productRepository.deleteById(3L);
+//        Category category = new Category();
+//        category.setName("electronics");
+//
+//        Category savedCategory = categoryRepository.save(category);
+//
+//        Price price = new Price();
+//        price.setPrice(100L);
+//        price.setCurrency("INR");
+//
+//        List<Product> productList = new ArrayList<>();
+//
+//        Product product = new Product();
+//        product.setTitle("Samsung");
+//        product.setDescription("best phone");
+//        product.setPrice(price);
+//        product.setImage("image url");
+//        product.setCategory(savedCategory);
+//        productRepository.save(product);
+//
+//        productList.add(product);
+//
+//        Orders order  = new Orders();
+//
+//        order.setProducts(productList);
+//        orderRepository.save(order);
+//        order.setId(1L);
 
 //
 //        //fetch Category

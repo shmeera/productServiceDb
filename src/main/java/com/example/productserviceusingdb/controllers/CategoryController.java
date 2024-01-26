@@ -17,6 +17,6 @@ public class CategoryController {
     }
     @PostMapping
     public Category create(@RequestBody Category category){
-        return  categoryService.Save(category);
+        return  categoryService.create(category);
     }
 }

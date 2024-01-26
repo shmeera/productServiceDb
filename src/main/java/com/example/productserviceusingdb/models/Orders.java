@@ -12,8 +12,13 @@ import java.util.List;
 @Entity(name="orders")
 public class Orders extends BaseModel {
     @ManyToMany
-    @JoinTable(name="product_orders",joinColumns = @JoinColumn(name = "order_id"),
-    inverseJoinColumns = @JoinColumn(name="product_id"))
-    @JsonManagedReference
+    @JoinTable(name="product_orders",
+            joinColumns = {
+                    @JoinColumn(name = "order_id",referencedColumnName = "id")
+            },
+    inverseJoinColumns = {
+            @JoinColumn(name="product_id",referencedColumnName = "id")
+    })
+//    @JsonManagedReference
     private List<Product> products;
 }

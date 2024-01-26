@@ -11,7 +11,7 @@ public class CategoryService {
     public CategoryService(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
-    public Category Save(Category category){
+    public Category create(Category category){
        return categoryRepository.save(category);
     }
 }
