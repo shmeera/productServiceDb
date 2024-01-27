@@ -31,6 +31,7 @@ public class OrderService {
         return  orderRepository.findById(id).orElse(null);
     }
     public List<Orders> GetAllOrders(){
+
         return orderRepository.findAll();
     }
     public Orders CreateOrder(List<Long> productIds)throws NotFoundException{

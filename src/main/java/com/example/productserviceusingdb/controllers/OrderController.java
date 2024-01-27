@@ -21,11 +21,13 @@ private OrderService orderService;
     }
     @GetMapping("{id}")
     public Orders GetOrderById(@PathVariable("id") Long id){
-        return orderService.GetOrderById(id);
+
+    return orderService.GetOrderById(id);
     }
     @GetMapping
     public List<Orders> GetAllOrders(){
-        return orderService.GetAllOrders();
+
+    return orderService.GetAllOrders();
     }
     @PostMapping
     public  Orders CreateOrder(@RequestBody OrderDto order) throws NotFoundException {

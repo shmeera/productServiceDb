@@ -1,6 +1,5 @@
 package com.example.productserviceusingdb.controllers;
 
-import com.example.productserviceusingdb.dtos.GenericProductDto;
 import com.example.productserviceusingdb.exceptions.NotFoundException;
 import com.example.productserviceusingdb.models.Product;
 import com.example.productserviceusingdb.services.ProductServices;
@@ -20,7 +19,10 @@ public class ProductController {
         this.productServices = productServices;
     }
     @GetMapping("{id}")
-    private Product GetProductById(@PathVariable("id") Long id) throws NotFoundException {
+    public Product GetProductById(@PathVariable("id") Long id) throws NotFoundException {
+        Product product = productServices.GetProductById(id);
+        if(product == null)
+            throw new NotFoundException("product not found");
         return  productServices.GetProductById(id);
     }
     @GetMapping
